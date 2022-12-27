@@ -22,7 +22,9 @@ class _HomeState extends State<EMI> {
         appBar: AppBar(
           backgroundColor: Color(0xff19235C),
           elevation: 0,
-          title: Text("EMI Calculator", style: TextStyle(color: Colors.white)),
+          title: Text("EMI Calculator",
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
           centerTitle: true,
           leading: Icon(
             Icons.widgets_outlined,
@@ -55,7 +57,7 @@ class _HomeState extends State<EMI> {
                       TextSpan(
                         children: [
                           TextSpan(
-                            text: "${answer.toInt()} \$",
+                            text: "₹${answer}",
                             style: TextStyle(color: Colors.white, fontSize: 50),
                           ),
                           TextSpan(
@@ -72,7 +74,7 @@ class _HomeState extends State<EMI> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                height: 500,
+                height: 605,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -96,11 +98,24 @@ class _HomeState extends State<EMI> {
                     Stack(
                       children: [
                         Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              "${selectedvalue.toInt()} \$",
-                              style: TextStyle(fontSize: 20),
-                            )),
+                          child: Text(
+                            "Loan Amount",
+                            style: TextStyle(
+                                color: Color(0xffe5e6e8), fontSize: 50),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "${selectedvalue.toInt()} \$",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color(0xff000000),
+                                    fontWeight: FontWeight.bold),
+                              )),
+                        ),
                       ],
                     ),
                     Slider(
@@ -114,7 +129,6 @@ class _HomeState extends State<EMI> {
                             selectedvalue = value;
                           });
                         }),
-                    SizedBox(height: 17),
                     Text(
                       "Interest Rate",
                       style: TextStyle(
@@ -125,10 +139,23 @@ class _HomeState extends State<EMI> {
                     Stack(
                       children: [
                         Align(
+                          child: Text(
+                            "Interst Rate",
+                            style: TextStyle(
+                                color: Color(0xffe5e6e8), fontSize: 50),
+                          ),
+                        ),
+                        Align(
                             alignment: Alignment.center,
-                            child: Text(
-                              "${interestrate.toInt()} %",
-                              style: TextStyle(fontSize: 20),
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 20),
+                              child: Text(
+                                "${interestrate.toInt()} %",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color(0xff000000),
+                                    fontWeight: FontWeight.bold),
+                              ),
                             )),
                       ],
                     ),
@@ -143,7 +170,6 @@ class _HomeState extends State<EMI> {
                             interestrate = value;
                           });
                         }),
-                    SizedBox(height: 17),
                     Text(
                       "Loan Tenure ",
                       style: TextStyle(
@@ -154,10 +180,23 @@ class _HomeState extends State<EMI> {
                     Stack(
                       children: [
                         Align(
+                          child: Text(
+                            "Loan Tenure",
+                            style: TextStyle(
+                                color: Color(0xffe5e6e8), fontSize: 50),
+                          ),
+                        ),
+                        Align(
                             alignment: Alignment.center,
-                            child: Text(
-                              "${loantenure.toInt()} Months",
-                              style: TextStyle(fontSize: 20),
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 20),
+                              child: Text(
+                                "${loantenure.toInt()} Months",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Color(0xff000000),
+                                    fontWeight: FontWeight.bold),
+                              ),
                             )),
                       ],
                     ),
